@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--为list集合注入-->
+    <bean id="dept" class="com.qmb.spring.iocxml.a4dilist.Department">
+        <property name="dname" value="人力资源部"></property>
+        <property name="empList">
+            <list>
+                <ref bean="emp1"></ref>
+                <ref bean="emp2"></ref>
+                <ref bean="emp3"></ref>
+            </list>
+        </property>
+    </bean>
+
+    <bean id = "emp1" class="com.qmb.spring.iocxml.a4dilist.Employee">
+        <property name="name" value="Lucas"></property>
+        <property name="age" value="22"></property>
+    </bean>
+
+    <bean id = "emp2" class="com.qmb.spring.iocxml.a4dilist.Employee">
+        <property name="name" value="Zoe"></property>
+        <property name="age" value="20"></property>
+    </bean>
+
+    <bean id = "emp3" class="com.qmb.spring.iocxml.a4dilist.Employee">
+        <property name="name" value="Tom"></property>
+        <property name="age" value="21"></property>
+    </bean>
+</beans>

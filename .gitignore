@@ -1,0 +1,22 @@
+# 忽略编译生成的文件夹
+build/
+target/
+jdk-17/
+resource/
+
+# 忽略临时文件
+*.log
+*.tmp
+*.swp
+
+# 忽略操作系统生成的文件
+.DS_Store
+Thumbs.db
+
+# 忽略 IDE 配置文件
+.idea/
+*.iml
+.vscode/
+
+# 忽略密钥或配置文件
+config/secrets.json

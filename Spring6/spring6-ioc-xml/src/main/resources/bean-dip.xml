@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util.xsd">
+    <util:list id="emplist">
+        <ref bean="emp1"></ref>
+        <ref bean="emp2"></ref>
+        <ref bean="emp3"></ref>
+    </util:list>
+    <!--p命名空间-->
+    <bean id="dept" class="com.qmb.spring.iocxml.a4dilist.Department"
+          p:dname="人力资源部"
+          p:empList-ref="emplist">
+    </bean>
+
+    <bean id = "emp1" class="com.qmb.spring.iocxml.a4dilist.Employee">
+        <property name="name" value="Lucas"></property>
+        <property name="age" value="22"></property>
+    </bean>
+
+    <bean id = "emp2" class="com.qmb.spring.iocxml.a4dilist.Employee">
+        <property name="name" value="Zoe"></property>
+        <property name="age" value="20"></property>
+    </bean>
+
+    <bean id = "emp3" class="com.qmb.spring.iocxml.a4dilist.Employee">
+        <property name="name" value="Tom"></property>
+        <property name="age" value="21"></property>
+    </bean>
+</beans>

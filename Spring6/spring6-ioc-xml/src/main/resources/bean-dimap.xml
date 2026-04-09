@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="teacher1" class="com.qmb.spring.iocxml.a5dimap.Teacher">
+        <property name="teacherId" value="10010"></property>
+        <property name="teacherName" value="王老师"></property>
+    </bean>
+
+    <bean id="teacher2" class="com.qmb.spring.iocxml.a5dimap.Teacher">
+        <property name="teacherId" value="10020"></property>
+        <property name="teacherName" value="李老师"></property>
+    </bean>
+
+    <bean id="teacher3" class="com.qmb.spring.iocxml.a5dimap.Teacher">
+        <property name="teacherId" value="10040"></property>
+        <property name="teacherName" value="刘老师"></property>
+    </bean>
+    <bean id="student" class="com.qmb.spring.iocxml.a5dimap.Student">
+        <property name="teacherMap">
+            <map>
+                <entry>
+                    <key>
+                        <value>张三</value>
+                    </key>
+                    <ref bean="teacher1"></ref>
+                </entry>
+                <entry>
+                    <key>
+                        <value>李四</value>
+                    </key>
+                    <ref bean="teacher2"></ref>
+                </entry>
+                <entry>
+                    <key>
+                        <value>王五</value>
+                    </key>
+                    <ref bean="teacher2"></ref>
+                </entry>
+            </map>
+        </property>
+    </bean>
+</beans>

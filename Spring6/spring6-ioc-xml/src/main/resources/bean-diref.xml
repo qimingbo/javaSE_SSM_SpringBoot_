@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation=
+               "http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/util
+                http://www.springframework.org/schema/util/spring-util.xsd">
+    <!--注意：在使用集合类型的bean之前，要导入XML命名空间和对应的XSD规则文件-->
+    <util:list id="empList">
+        <ref bean="emp1"></ref>
+        <ref bean="emp2"></ref>
+        <ref bean="emp3"></ref>
+    </util:list>
+    <util:map id="teacherMap">
+        <entry>
+            <key>
+                <value>0001</value>
+            </key>
+            <ref bean="teacher1"></ref>
+        </entry>
+        <entry>
+            <key>
+                <value>0002</value>
+            </key>
+            <ref bean="teacher2"></ref>
+        </entry>
+    </util:map>
+    <!--1.引用集合类型的bean,list例子-->
+    <bean id="dept" class="com.qmb.spring.iocxml.a4dilist.Department">
+        <property name="dname" value="财务部"></property>
+        <property name="empList" ref="empList"></property>
+    </bean>
+
+    <bean id="emp1" class="com.qmb.spring.iocxml.a4dilist.Employee">
+        <property name="name" value="Lucas"></property>
+        <property name="age" value="20"></property>
+    </bean>
+    <bean id="emp2" class="com.qmb.spring.iocxml.a4dilist.Employee">
+        <property name="name" value="Tom"></property>
+        <property name="age" value="22"></property>
+    </bean>
+    <bean id="emp3" class="com.qmb.spring.iocxml.a4dilist.Employee">
+        <property name="name" value="Zoe"></property>
+        <property name="age" value="25"></property>
+    </bean>
+    <!--2.引用集合类型的bean,map例子-->
+    <bean id ="student" class="com.qmb.spring.iocxml.a5dimap.Student">
+        <property name="teacherMap" ref="teacherMap"></property>
+    </bean>
+    <bean id="teacher1" class="com.qmb.spring.iocxml.a5dimap.Teacher">
+        <property name="teacherId" value="10010"></property>
+        <property name="teacherName" value="王老师"></property>
+    </bean>
+    <bean id="teacher2" class="com.qmb.spring.iocxml.a5dimap.Teacher">
+        <property name="teacherId" value="10020"></property>
+        <property name="teacherName" value="张老师"></property>
+    </bean>
+</beans>

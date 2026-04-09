@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--对象类型属性注入-->
+        <!--1.外部bean方式注入-->
+        <bean id = "emp1" class="com.qmb.spring.iocxml.a3ditest.Employee">
+            <property name="name" value="Lucas"></property>
+            <property name="age" value="20"></property>
+            <property name="dept" ref="dept1"></property>
+        </bean>
+        <bean id = "dept1" class="com.qmb.spring.iocxml.a3ditest.Department">
+            <property name="dname" value="财务部"></property>
+        </bean>
+
+        <!--2.内部bean方式注入-->
+        <!-- 在一个bean中再声明一个bean就是内部bean -->
+        <!-- 内部bean只能用于给属性赋值，不能在外部通过IOC容器获取，因此可以省略id属性 -->
+    <bean id = "emp2" class="com.qmb.spring.iocxml.a3ditest.Employee">
+        <property name="name" value="Tom"></property>
+        <property name="age" value="20"></property>
+        <property name="dept" >
+            <bean class="com.qmb.spring.iocxml.a3ditest.Department">
+                <property name="dname" value="人力资源部"></property>
+            </bean>
+        </property>
+    </bean>
+
+    <!--3.级联属性方式注入-->
+    <bean id = "emp3" class="com.qmb.spring.iocxml.a3ditest.Employee">
+        <property name="name" value="Zoe"></property>
+        <property name="age" value="26"></property>
+        <property name="dept" ref="dept2"></property>
+        <property name="dept.dname" value="软件开发部"></property>
+    </bean>
+    <bean id = "dept2" class="com.qmb.spring.iocxml.a3ditest.Department">
+        <property name="dname" value="财务部"></property>
+    </bean>
+
+    <!--为数组注入-->
+    <bean id = "emp4" class="com.qmb.spring.iocxml.a3ditest.Employee">
+        <property name="name" value="lisi"></property>
+        <property name="age" value="21"></property>
+        <property name="dept" ref="dept1"></property>
+        <property name="hobbies">
+            <array>
+                <value>游泳</value>
+                <value>唱歌</value>
+                <value>爬山</value>
+            </array>
+        </property>
+    </bean>
+</beans>

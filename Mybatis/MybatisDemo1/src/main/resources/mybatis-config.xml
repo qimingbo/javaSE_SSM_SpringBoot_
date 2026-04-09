@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!--类型别名-->
+    <typeAliases>
+        <!--自动扫包,返回类型可以不加包名，直接书写类名，不区分大小写-->
+        <package name="com.qmb.pojo"/>
+    </typeAliases>
+
+    <!--
+    environments：配置数据库连接环境信息。可以配置多个environment，通过default属性切换不同的environment
+    -->
+    <environments default="test">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <!--Mybatis默认的数据源-->
+            <dataSource type="POOLED">
+                <!--数据库连接信息-->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC"/>
+                <property name="username" value="qimingbo"/>
+                <property name="password" value="1234"/>
+            </dataSource>
+        </environment>
+
+        <!--配置druid数据源-->
+        <environment id="test">
+            <transactionManager type="JDBC"/>
+            <dataSource type="com.qmb.util.DruidDataSourceFactory">
+                <!--数据库连接信息-->
+                <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC"/>
+                <property name="username" value="qimingbo"/>
+                <property name="password" value="1234"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!--Mapper代理方式,需要接口和映射文件在同包同名-->
+        <package name="com.qmb.mapper"/>
+
+        <!--由于文件名不再一致，MyBatis 的“自动扫描”可能会失效。你需要手动指定位置-->
+       <!-- <mapper resource="com/qmb/mapper/UserMapper.xml"></mapper>-->
+
+    </mappers>
+
+
+</configuration>

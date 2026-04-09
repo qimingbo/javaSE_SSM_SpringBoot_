@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--1.set注入-->
+    <bean id="book" class="com.qmb.spring.iocxml.a2di.Book">
+        <property name="bname" value="java开发"></property>
+        <property name="author" value="齐铭博"></property>
+    </bean>
+    <!--2.构造器注入,还包括几种特殊值注入-->
+    <bean id="book1" class="com.qmb.spring.iocxml.a2di.Book">
+        <constructor-arg name="author" value="齐铭博"></constructor-arg>
+        <constructor-arg name="bname" value="python开发"></constructor-arg>
+        <constructor-arg name="others">
+            <null/>
+        </constructor-arg>
+    </bean>
+    <bean id="book2" class="com.qmb.spring.iocxml.a2di.Book">
+        <constructor-arg name="author" value="齐铭博"></constructor-arg>
+        <constructor-arg name="bname" value="python开发"></constructor-arg>
+        <constructor-arg name="others" value="a&lt;b">
+        </constructor-arg>
+    </bean>
+    <bean id="book3" class="com.qmb.spring.iocxml.a2di.Book">
+        <constructor-arg name="author" value="齐铭博"></constructor-arg>
+        <constructor-arg name="bname" value="python开发"></constructor-arg>
+        <constructor-arg name="others">
+            <value><![CDATA[a<b]]></value>
+        </constructor-arg>
+    </bean>
+    <bean id="book4" class="com.qmb.spring.iocxml.a2di.Book">
+        <constructor-arg name="author" value="齐铭博"></constructor-arg>
+        <constructor-arg name="bname" value="python开发"></constructor-arg>
+        <constructor-arg name="others" value="abc">
+        </constructor-arg>
+    </bean>
+</beans>
