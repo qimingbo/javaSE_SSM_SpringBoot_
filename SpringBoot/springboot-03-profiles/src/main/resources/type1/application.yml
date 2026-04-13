@@ -1,0 +1,5 @@
+# profile的配置方式
+# 方式1 多profile方式,后缀可以是properties、yml、yaml
+spring:
+  profiles:
+    active: prod

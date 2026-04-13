@@ -1,0 +1,4 @@
+# 自定义的配置文件,用命令行参数启动
+# java -jar springboot-03-profiles-0.0.1-SNAPSHOT.jar --spring.config.name=myproject
+server:
+  port: 8088
