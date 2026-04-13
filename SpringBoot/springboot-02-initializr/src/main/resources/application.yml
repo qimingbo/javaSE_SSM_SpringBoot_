@@ -1,0 +1,25 @@
+# 应用服务WEB访问端口
+server:
+  port: 8080
+# 参数引用
+name: lisi
+# 键值对的集合
+person:
+  name: ${name}
+  age: 20
+# 行内写法
+#person: {name: zhangsan}
+
+# 数组：一组按次序排列的值
+address:
+  - beijing
+  - nanjing
+  - zhengzhou
+# 行内写法
+#address: [beijing, nanjing, zhengzhou]
+
+# 纯量：单个不可再分的值
+msg1: 'hello \n world'
+msg2: "hello \n world"
+
+
