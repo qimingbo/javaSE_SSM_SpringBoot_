@@ -31,6 +31,8 @@
             <optional>true</optional>
         </dependency>
     </dependencies>
+
+    <!--引入BOM,依赖的版本定义-->
     <dependencyManagement>
         <dependencies>
             <dependency>
