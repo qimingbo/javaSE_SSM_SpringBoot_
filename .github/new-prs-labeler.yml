@@ -1,0 +1,59 @@
+# Labels applied to PRs based on the files changed.
+# Backend labels are set when any file under the backend's third_party/ directory changes.
+# The DOC label is set when every changed file is a documentation file
+# (matches the same "docs-only" definition used by check-docs-only action:
+#  *.md / *.yml / *.txt / CODEOWNERS, but NOT CMakeLists.txt).
+
+# ---- Backend labels ----
+
+Mybatis:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'Mybatis/**'
+
+Spring6:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'Spring6/**'
+SpringBoot:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'SpringBoot/**'
+
+SpringMVC:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'SpringMVC/**'
+
+basic-code:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'basic-code/**'
+
+javaSE-1:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'javaSE-1/**'
+
+
+
+
+# ---- DOC label ----
+# This label is applied ONLY when the PR consists exclusively of documentation.
+# It uses a strict inclusion list combined with an explicit exclusion of build files
+# to ensure no functional code changes are mislabeled as "DOC".
+
+DOC:
+  - all:
+      # Condition A: All must be document file extensions
+      - changed-files:
+          - any-glob-to-all-files:
+              - '**/*.md'
+              - '**/*.yml'
+              - '**/*.txt'
+              - '**/CODEOWNERS'
+
+      # Condition B: Must not contain CMakeLists.txt
+      - changed-files:
+          - all-globs-to-all-files:
+              - '!**/CMakeLists.txt'
