@@ -1,3 +1,14 @@
+# 注解
+
+## `@import`
+
+`@Enable*`底层依赖于`@import`注解导入一些类，使用`@import`导入的类也会被`Spring`加载到`IoC`容器中。而`@import`提供四种用法
+
+1. 导入bean
+2. 导入配置类
+3. 导入`ImportSelector`实现类，一般用于加载配置文件中的类。
+4. 导入`ImportBeanDefinitionRegistrar`实现类
+
 # `Mybatis`中`Mapper`接口和`XML`的绑定
 
 `Mybatis`的约定：扫描该包下的 `Mapper` 接口，并尝试绑定对应 `XML`， `XML` 和接口在同一个包，文件名必须一致。
@@ -10,10 +21,6 @@
 **当“XML路径是显式配置的（mapper-locations 或 `<mapper resource>`）且接口通过扫描注册时，XML文件名可以与接口名不一致；真正要求一致的是 `namespace` 与接口全类名。**
 
 **`MyBatis`需要先加载 `Mapper XML`，将 `SQL` 注册到 `Configuration` 中，然后通过扫描 `Mapper` 接口生成代理对象。调用接口方法时，根据“接口全类名 + 方法名”找到对应 `SQL` 并执行**
-
-
-
-
 
 
 
