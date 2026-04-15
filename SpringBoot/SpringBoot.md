@@ -1,4 +1,27 @@
-# 对比 SpringBoot 2.4.0 版本前后配置文件机制改动
+# `Mybatis`中`Mapper`接口和`XML`的绑定
+
+`Mybatis`的约定：扫描该包下的 `Mapper` 接口，并尝试绑定对应 `XML`， `XML` 和接口在同一个包，文件名必须一致。
+
+`Mybatis`需要做两件事
+
+1. **加载 Mapper XML（注册 SQL）**
+2. **扫描 Mapper 接口（生成代理对象）**
+
+**当“XML路径是显式配置的（mapper-locations 或 `<mapper resource>`）且接口通过扫描注册时，XML文件名可以与接口名不一致；真正要求一致的是 `namespace` 与接口全类名。**
+
+**`MyBatis`需要先加载 `Mapper XML`，将 `SQL` 注册到 `Configuration` 中，然后通过扫描 `Mapper` 接口生成代理对象。调用接口方法时，根据“接口全类名 + 方法名”找到对应 `SQL` 并执行**
+
+
+
+
+
+
+
+
+
+
+
+# 对比 `SpringBoot 2.4.0` 版本前后配置文件机制改动
 
 ## 2.4.0版本之前
 

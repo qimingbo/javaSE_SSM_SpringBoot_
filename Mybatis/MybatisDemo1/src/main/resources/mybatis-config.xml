@@ -40,6 +40,7 @@
     </environments>
     <mappers>
         <!--Mapper代理方式,需要接口和映射文件在同包同名-->
+        <!--扫描mapper接口-->
         <package name="com.qmb.mapper"/>
 
         <!--由于文件名不再一致，MyBatis 的“自动扫描”可能会失效。你需要手动指定位置-->
