@@ -60,7 +60,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.qmb.Springboot07EnableOtherApplication</mainClass>
+                    <mainClass>com.Springboot07EnableOtherApplication</mainClass>
                     <skip>true</skip>
                 </configuration>
                 <executions>

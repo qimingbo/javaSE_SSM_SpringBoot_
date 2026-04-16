@@ -1,6 +1,6 @@
-package com.qmb.config;
+package com.config;
 
-import com.qmb.entity.User;
+import com.entity.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

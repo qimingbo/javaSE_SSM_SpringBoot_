@@ -1,10 +1,10 @@
-package com.qmb.springboot07enableother;
+package com.springboot06enable;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Springboot07EnableOtherApplicationTests {
+class Springboot06EnableApplicationTests {
 
     @Test
     void contextLoads() {
