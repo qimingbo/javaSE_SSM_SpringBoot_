@@ -1,3 +1,15 @@
+# `Java`监听机制
+
+`Java`中的事件监听机制定义了以下几个角色：
+
+1. 事件：`Event`，继承`java.util.EventObject`类的对象
+2. 事件源：`Source`，任意对象的`Object`(事件源就是事件发生的地方，比如UI组件)
+3. 监听器：`Listener`，实现`java.util.EventListener`接口的对象
+
+事件源与事件通过监听器接口连接在一起。
+
+`SpringBoot`的监听机制，其实是对Java提供的事件监听机制的封装
+
 # 注解
 
 ## `@import`
