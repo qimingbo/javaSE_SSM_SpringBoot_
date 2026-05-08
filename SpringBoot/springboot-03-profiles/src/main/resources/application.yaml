@@ -1,5 +1,5 @@
 # profile的配置方式
-# 方式2 yml多文档方式
+# 方式2 yml多文档方式（springboot 2.4之前的版本）
 # 激活方式：
 # 1. 配置文件，如本文档所示
 # 2. 虚拟机参数 -Dspring.profiles.active=test
@@ -15,24 +15,18 @@ spring:
 server:
   port: 8082
 spring:
-  config:
-    activate:
-      on-profile: dev
+  profiles: dev
 
 ---
 # 测试环境配置
 server:
   port: 8083
 spring:
-  config:
-    activate:
-      on-profile: test
+  profiles: test
 
 ---
 # 生产环境配置
 server:
   port: 8084
 spring:
-  config:
-    activate:
-      on-profile: prod
+  profiles: prod
